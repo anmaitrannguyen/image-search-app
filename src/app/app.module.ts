@@ -13,10 +13,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ImageListComponent } from './image-list/image-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ImageListComponent
   ],
   imports: [
     BrowserModule,
