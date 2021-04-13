@@ -25,3 +25,35 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Folder Structure
+--------------
+
+This tree represents the directories of this repository:
+
+```
+|
+├───app
+│   │   app.component.css
+│   │   app.component.html
+│   │   app.component.ts
+│   │   app.module.ts
+│   │
+│   ├───image-list --- Main component of app
+│   │       image-list.component.css
+│   │       image-list.component.html
+│   │       image-list.component.ts
+│   │
+│   └───shared
+│       ├───model --- Contains model objects
+│       │       image-response.ts
+│       │
+│       └───service --- Contains shared service of app
+│               image-list-api.service.ts
+│
+├───assets
+│
+└───environments --- Contains build configuration options for particular target environments.
+        environment.prod.ts
+        environment.ts
+```
