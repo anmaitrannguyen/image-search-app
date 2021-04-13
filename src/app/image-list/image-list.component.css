@@ -1,0 +1,27 @@
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+
+.search-bar {
+  width: 100%;
+}
+
+.md-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.icon-with-text {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,6 +16,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ImageListComponent } from './image-list/image-list.component';
 
+import { ImageListApiService } from './shared/service/image-list-api.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +25,8 @@ import { ImageListComponent } from './image-list/image-list.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatToolbarModule,
@@ -32,7 +37,7 @@ import { ImageListComponent } from './image-list/image-list.component';
     MatProgressSpinnerModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [ImageListApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

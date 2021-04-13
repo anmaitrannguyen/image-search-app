@@ -1,1 +1,58 @@
-<p>image-list works!</p>
+<mat-toolbar color="primary">
+  <mat-form-field floatLabel="never" class="search-bar">
+    <mat-label>Search image</mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="searchQuery"
+      (keydown.enter)="searchImages(searchQuery)"
+    />
+    <button
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Search"
+      (click)="searchImages(searchQuery)"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</mat-toolbar>
+<div class="content">
+  <div *ngIf="loading" fxLayout="row" fxLayoutAlign="center">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+  
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let imageItem of images; let i = index; trackBy: trackById"
+    >
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <img class="md-user-avatar" src="{{imageItem.userImageURL}}" />
+          </div>
+          <mat-card-title>{{ imageItem.user }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="{{ imageItem.webformatURL }}"
+          alt="{{ imageItem.tags }}"
+        />
+        <mat-card-content>
+          <div class="icon-with-text">
+            <mat-icon inline>thumb_up</mat-icon
+            ><span class="icon-with-text__text">{{ imageItem.likes }}</span>
+          </div>
+          <div class="icon-with-text">
+            <mat-icon inline>comment</mat-icon
+            ><span class="icon-with-text__text">{{ imageItem.comments }}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
